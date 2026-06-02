@@ -1,0 +1,14 @@
+class Solution {
+    public int[] getConcatenation(int[] nums) {
+    int n = nums.length; // 3 (in question)
+    int[]ans = new int[2 * n];  //double the array size,so here n = 2*3 = 6
+    
+    for(int i = 0;i < n; i++){
+       ans[i] = nums[i];     //iterate i= 0 -->ans[0] = nums[0] --> ans[0] = 1
+       ans[i+n] = nums[i];  //ans[0+3] = nums[i]  = ans[3]  = 1
+    }
+
+    return ans; // output :[1,0,0,1,0,0];
+
+    }
+}
