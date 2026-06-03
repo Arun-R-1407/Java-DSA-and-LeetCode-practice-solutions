@@ -1,0 +1,11 @@
+class Solution {
+    public int[] buildArray(int[] nums) {
+       //
+        int ans[] = new int[nums.length];
+        for(int i = 0 ;i <=nums.length-1 ; i++){  //nums.length is 6 -1 = 5 so i<=5
+            ans[i] = nums[nums[i]];  //here (ans[o] = nums[nums[0]])  -->nums[0]
+        }
+  
+    return ans;
+}
+}
