@@ -1,11 +1,59 @@
+/*Input: nums = [0,2,1,5,3,4]
+Output: [0,1,2,4,5,3]*/
+// you want to create a array which is shows like programmer understandle 
+// ex : non programmer count a number  from 1 ..but programmer start from 0 that is we want to create
+
+// a zero based permutation meaans array of distint integer which is every number apear atleast once in the array 
+// ex  a[4] -->it should be  [1,2,3,0] or [0,1,3,2]  must zero included in the array because of question is zero based permutation .......it should not be [1,2,3,4] and [1,1,3,2]
+ 
+
 class Solution {
     public int[] buildArray(int[] nums) {
-       //
-        int ans[] = new int[nums.length];
-        for(int i = 0 ;i <=nums.length-1 ; i++){  //nums.length is 6 -1 = 5 so i<=5
-            ans[i] = nums[nums[i]];  //here (ans[o] = nums[nums[0]])  -->nums[0]
+       
+        int ans[] = new int[nums.length];   //ans  = 6--> [0,0,0,0,0,0]
+        for(int i =0;i<nums.length;i++){
+
+            ans[i] = nums[nums[i]];  // ans[1] = nums[nums[1]] ---> ans [0] = nums[2] -->ans[0] = 1
         }
   
     return ans;
 }
 }
+
+
+
+
+// Pattern
+// Array Traversal + Index Mapping
+
+// Array Traversal → You visit every element of the array once using a for loop.
+// Index Mapping → You use the value at one index (nums[i]) as another index (nums[nums[i]]).
+ 
+
+
+// Explanation
+
+/*
+First I create an integer array called `ans` with the same length as the `nums` array
+
+Then, I use a `for` loop to traverse every index of the `nums`array
+
+In each iteration, I first get the value at `nums[i]`.
+Then, I use that value as a new index to access another element in the `nums` array.
+
+Finally, I store that value in `ans[i]`.
+
+After the loop finishes, I return the `ans` array
+*/
+
+// Time Complexity
+
+/*
+I traverse the array only once using a single `for` loop
+Therefore, the time complexity is O(n)
+*/
+
+// Space Complexity
+
+/*
+I create one extra array called `ans` with the*/
