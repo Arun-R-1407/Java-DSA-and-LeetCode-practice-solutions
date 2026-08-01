@@ -1,17 +1,69 @@
- class Solution {
+/*Input: accounts = [[1,5],[7,3],[3,5]]
+Output: 10*/
+
+
+class Solution {
     public int maximumWealth(int[][] accounts) {
   
-        int wealth=0;
-    for(int i = 0;i<accounts.length;i++){
+        int wealth=0; 
+    for(int i = 0;i<accounts.length;i++){ //[[1,2,3]]
         int sum = 0;
-        for(int j = 0;j<accounts[i].length;j++){
-            sum += accounts[i][j];
+        for(int j = 0;j<accounts[i].length;j++){//[[3,2,1]]
+            sum += accounts[i][j]; // sum = sum + accounts[i][j] --> sum  = 0+accounts[0][1]-->sum = 2
         }
-        wealth = Math.max(wealth,sum);
+        wealth = Math.max(wealth,sum); // Math.max(0,6) ---> wealth  = 6
     }
         
-     return wealth;
+     return wealth; // 6
 
     } 
  
     }
+
+
+
+    // Pattern
+// Matrix Traversal (2D Array Traversal)
+
+// Explanation
+/*
+First, I create an integer variable called `wealth` and initialize it to 0.
+This variable stores the maximum wealth among all customers.
+Then, I use the first `for` loop to traverse each customer's account.
+Inside the first loop, I create another integer variable called `sum` and initialize it to 0.
+This variable stores the total wealth of the current customer.
+Next, I use the second `for` loop to traverse each account balance of the current customer.
+In each iteration, I add the current account balance to `sum`.
+After calculating the total wealth of the current customer, I compare `sum` with `wealth` using `Math.max()`.
+If `sum` is greater than `wealth`, then `wealth` is updated.
+Finally, I return the `wealth` variable, which contains the maximum wealth.
+*/
+
+
+
+// Time Complexity
+
+/*
+I use two nested `for` loops to traverse all the elements in the 2D array.
+Therefore, the time complexity is O(m × n),
+where `m` is the number of customers (rows)
+and `n` is the number of accounts (columns).
+*/
+
+
+// Space Complexit
+/*
+I only use two integer variables, `wealth` and `sum`
+I do not create any extra array or data structure
+Therefore, the space complexity is O(1)
+*/
+
+
+// Can it be optimized?     
+/*
+     No
+This solution is already optimal
+We must visit every account balance at least once to calculate each customer's total wealth
+Therefore, the best possible time complexity is O(m × n),
+and the space complexity is already O(1).
+*/
