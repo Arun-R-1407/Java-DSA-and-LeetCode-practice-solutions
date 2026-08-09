@@ -1,12 +1,12 @@
 class Solution {
     public int largestAltitude(int[] gain) {
-        int ans= 0;  
-        int max= 0;    
+        int ans= 0;  // initially 0
+        int max= 0;    // initially 0 
         
-        for(int i = 0; i<gain.length; i++) { 
-           ans +=gain[i]; 
+        for(int i = 0; i<gain.length; i++) {  // 
+           ans +=gain[i]; // ans = ans + gain[i] ---> ans =  0 + (-5) -- > ans = -5
             
-            if(ans>max) {  
+            if(ans>max) {    //0 > -5
                 max = ans;
             }
         }
@@ -14,3 +14,40 @@ class Solution {
         return max;
     }
 }
+
+
+// Explanation 
+
+/* First, I create a variable called ans to store the current altitude and initialize it to 0 because the biker starts at altitude 0. Then, I create a variable called max to store the highest altitude found so far, and I also initialize it to 0. Next, I use a for loop to traverse the gain array. In each iteration, I add the current gain to ans to calculate the current altitude. Then, I check whether ans is greater than max. If it is greater, I update max with ans. Finally, I return max, which contains the highest altitude.
+*/
+
+
+
+// Time Complexity
+
+/*
+I use one for loop to traverse the entire array once.
+Therefore, the time complexity is O(n).
+*/
+
+
+// Space Complexity
+
+/*
+I only use a few integer variables and do not create
+any extra array or data structure.
+
+Therefore, the space complexity is O(1).
+*/
+
+
+// Can it be optimized?
+
+/*
+No, this solution is already optimal.
+
+We must visit every element at least once to calculate
+the altitude, so O(n) is the best possible time complexity.
+
+We also use only constant extra space, so O(1) is already optimal.
+*/
