@@ -40,7 +40,11 @@ class Solution {
 //  Explanation 
 
 
-/*I used Binary Search because the array is sorted. I maintain two pointers, start and end, and calculate the middle index in each iteration. If the middle element is equal to the target, I return its index. If it is smaller, I search the right half, and if it is greater, I search the left half. If the target is not found, start gives the correct insertion position. The time complexity is O(log n), and the space complexity is O(1). */
+/*I used Binary Search because the array is sorted. I maintain two pointers, 
+start and end, and calculate the middle index in each iteration. If the middle element is equal to the target,
+I return its index. If it is smaller, I search the right half, and if it is greater,
+I search the left half. If the target is not found, start gives the correct insertion position.
+The time complexity is O(log n), and the space complexity is O(1). */
 
 
 //  time complexity 
